@@ -18,14 +18,11 @@ module.exports = function (config) {
         ],
 
         files: [
-            'public/test/requirements/preconf-karma.js',
-            'public/test/unit/core/**/*.test.js',
-            'public/test/unit/components/**/*.test.js'
+            'public/test/requirements/karma.js',
+            'public/test/integration/**/*.test.js'
         ],
 
-        exclude: [
-            'test/unit/core/local-db-utils.test.js'
-        ],
+        exclude: [],
 
         preprocessors: {
             '**/*.js': ['webpack', 'sourcemap']
@@ -66,5 +63,3 @@ module.exports = function (config) {
     });
 
 };
-
-// karma karma-cli karma-chrome-launcher karma-webpack karma-sourcemap-loader karma-mocha
