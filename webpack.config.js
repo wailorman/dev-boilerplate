@@ -2,9 +2,9 @@ const NODE_ENV = process.env.NODE_ENV == 'production' ? 'production' : 'developm
 var webpack = require('webpack');
 
 var webpackConfig = {
-    entry: './src/main.js',
+    entry: './public/src/main.js',
     output: {
-        path: __dirname + '/dist',
+        path: __dirname + '/public/dist',
         filename: './bundle.js'
     },
 
