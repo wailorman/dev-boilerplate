@@ -3,6 +3,7 @@ var _ = require('lodash');
 var originalTestConfig = require('./webpack.config-mocha');
 var karmaWebpackConfig = _.pick(originalTestConfig, ['context', 'module', 'plugins', 'devtool']);
 
+// remove write-file-webpack-plugin
 karmaWebpackConfig.plugins = _.take(karmaWebpackConfig.plugins, 1);
 
 module.exports = function (config) {
