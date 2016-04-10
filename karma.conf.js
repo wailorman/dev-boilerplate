@@ -11,12 +11,14 @@ module.exports = function (config) {
     config.set({
 
         frameworks: ['mocha'],
+        reporters: ['mocha'],
 
         plugins: [
             require('karma-webpack'),
             require('karma-sourcemap-loader'),
             require('karma-phantomjs-launcher'),
             require('karma-chrome-launcher'),
+            require('karma-mocha-reporter'),
             require('karma-mocha')
         ],
 
