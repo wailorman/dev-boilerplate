@@ -65,6 +65,7 @@
     "serve:test:client:integration:webpack": "echo \"http://localhost:8010/webpack-dev-server/\" && node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config-mocha.js --port 8010 --content-base \"./dist/test/integration-client\"",
     "serve:client": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.js --content-base \"./dist/\"",
     "serve:api": "npm run start",
+    "start:dev": "node --harmony ./src/app.js",
     "start": "NODE_ENV=production node_modules/forever/bin/forever start -c \"node --harmony\" ./src/app.js ",
     "stop": "node_modules/forever/bin/forever stop ./src/app.js",
     "start:win32": "set NODE_ENV=production && node node_modules/forever/bin/forever start -c \"node --harmony\" ./src/app.js ",
