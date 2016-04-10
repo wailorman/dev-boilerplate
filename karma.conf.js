@@ -5,14 +5,6 @@ var karmaWebpackConfig = _.pick(originalTestConfig, ['context', 'module', 'plugi
 
 karmaWebpackConfig.entry = {};
 
-karmaWebpackConfig.resolve = {
-    modulesDirectories: [
-        "",
-        "src",
-        "node_modules"
-    ]
-};
-
 delete karmaWebpackConfig.plugins[1];
 
 module.exports = function (config) {
