@@ -6,16 +6,15 @@ const nodeExternals = require('webpack-node-externals');
 
 var webpackConfig = {
 
-    target: 'node',
-    externals: [nodeExternals()],
+    //target: 'node',
+    //externals: [nodeExternals()],
     context: originalConfig.context,
     node: originalConfig.node,
     entry: {
 
         "unit-client": `${__dirname}/public/test/unit/index`,
 
-        "integration-client-dev": `mocha!${__dirname}/public/test/integration/index`,
-        "integration-client": `${__dirname}/public/test/integration/index`
+        "integration-client-dev": `mocha!${__dirname}/public/test/integration/index`
 
     },
     output: {
