@@ -50,6 +50,7 @@ if (NODE_ENV == 'production') {
         new webpack.optimize.UglifyJsPlugin()
     );
 
+    // todo: Add sourcemaps to production version
     webpackConfig.devtool = null;
 }
 
