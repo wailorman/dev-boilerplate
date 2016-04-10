@@ -17,8 +17,6 @@ describe("Example client integration test", ()=> {
         expect(Q).to.exist;
         expect(Q.defer).to.exist;
 
-        console.log(`123123`);
-
     });
 
 });
