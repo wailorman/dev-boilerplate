@@ -3,9 +3,7 @@ var _ = require('lodash');
 var originalTestConfig = require('./webpack.config-mocha');
 var karmaWebpackConfig = _.pick(originalTestConfig, ['context', 'module', 'plugins', 'devtool']);
 
-karmaWebpackConfig.entry = {};
-
-delete karmaWebpackConfig.plugins[1];
+karmaWebpackConfig.plugins = _.take(karmaWebpackConfig.plugins, 1);
 
 module.exports = function (config) {
 
