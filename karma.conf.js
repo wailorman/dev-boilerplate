@@ -13,6 +13,8 @@ karmaWebpackConfig.resolve = {
     ]
 };
 
+delete karmaWebpackConfig.plugins[1];
+
 module.exports = function (config) {
 
     config.set({
