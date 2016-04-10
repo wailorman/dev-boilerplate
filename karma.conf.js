@@ -3,6 +3,16 @@ var _ = require('lodash');
 var originalTestConfig = require('./webpack.config-mocha');
 var karmaWebpackConfig = _.pick(originalTestConfig, ['context', 'module', 'plugins', 'devtool']);
 
+karmaWebpackConfig.entry = {};
+
+karmaWebpackConfig.resolve = {
+    modulesDirectories: [
+        "",
+        "src",
+        "node_modules"
+    ]
+};
+
 module.exports = function (config) {
 
     config.set({
@@ -19,17 +29,17 @@ module.exports = function (config) {
 
         files: [
             './node_modules/phantomjs-polyfill/bind-polyfill.js',
-            'test/requirements/karma.js',
-            'public/test/integration/**/*.int.js'
+            './test/requirements/karma.js',
+            './public/test/integration/**/*.int.js'
         ],
 
         exclude: [],
 
         preprocessors: {
-            '**/*.int.js': ['webpack', 'sourcemap']
+            '../**/*.int.js': ['webpack', 'sourcemap']
         },
 
-        browsers: ['PhantomJS', 'Chrome'],
+        browsers: ['PhantomJS'],
 
         // Exit the test runner as well when the test suite returns.
         singleRun: false,
