@@ -2,7 +2,7 @@
   "name": "dev-boilerplate",
   "version": "1.0.0",
   "description": "",
-  "main": "entry.js",
+  "main": "src/app.js",
   "dependencies": {
     "async": "^1.5.0",
     "body-parser": "^1.15.0",
