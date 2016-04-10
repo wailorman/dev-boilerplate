@@ -26,4 +26,4 @@
 1. Run npm building task with watch flag, i.e. `build:test:client:unit` with flag `-- --watch`
 2. Run mocha task:
     - node parameters: `--harmony` flag
-    - mocha parameters: `--require ./test/requirements/mocha.js ./public/test/unit/**/*.unit.js`
+    - mocha parameters: `--require ./test/requirements/mocha.js`, Test file: `dist/test/unit-client.build.js`
