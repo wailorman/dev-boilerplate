@@ -1,13 +1,17 @@
 const originalConfig = require('./webpack.config');
 const webpack = require('webpack');
-const _ = require('lodash');
 const WriteFilePlugin = require('write-file-webpack-plugin');
-const nodeExternals = require('webpack-node-externals');
+const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 
 var webpackConfig = {
 
     //target: 'node',
     //externals: [nodeExternals()],
+    externals: {
+        'react/lib/ReactContext': true,
+        'react/lib/ExecutionEnvironment': true,
+        'react/addons': true
+    },
     context: originalConfig.context,
     node: originalConfig.node,
     entry: {
@@ -43,15 +47,16 @@ var webpackConfig = {
             '_': 'lodash',
             'Q': 'q',
             'logger': __dirname + '/public/lib/logger',
-            'Immutable': 'seamless-immutable',
 
             'React': 'react',
             'ReactDOM': 'react-dom',
+            'TestUtils': 'react-addons-test-utils',
 
             'expect': __dirname + '/test/requirements/chai-expect.js',
-            'sinon': 'sinon'
+            'sinon': 'imports?define=>false,require=>false!sinon/pkg/sinon'
         }),
-        new WriteFilePlugin()
+        new WriteFilePlugin(),
+        new WebpackBuildNotifierPlugin({successSound: false})
     ],
 
     devtool: 'eval',
